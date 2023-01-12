@@ -5,16 +5,23 @@ interface WeaponsProps {
     image: string;
     farmable_days: string[];
   }[];
+  today: string;
 }
 
-const WeaponsCard: React.FC<WeaponsProps> = ({ weapons }) => {
+const WeaponsCard: React.FC<WeaponsProps> = ({ weapons, today }) => {
   return (
     <div className="w-5/6 border-2 border-red-400 ">
       <ul className="flex flex-wrap">
         {weapons.map((weapon) => (
           <div key={weapon.id}>
-            <li>{weapon.name}</li>
-            <img src={weapon.image} alt={weapon.name} />
+            {weapon.farmable_days.includes(today) ? (
+              <>
+                <li>{weapon.name}</li>
+                <img src={weapon.image} alt={weapon.name} />
+              </>
+            ) : (
+              ""
+            )}
           </div>
         ))}
       </ul>

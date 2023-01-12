@@ -36,7 +36,7 @@ const Home: NextPage<FarmableProps> = ({ characters, weapons }) => {
       <main className="flex min-h-screen flex-col items-center justify-center">
         <h1>Uwu</h1>
         <CharactersCard characters={characters} today={today} />
-        <WeaponsCard weapons={weapons} />
+        <WeaponsCard weapons={weapons} today={today} />
       </main>
     </>
   );

@@ -14,15 +14,16 @@ const CharactersCard: React.FC<CharactersProps> = ({ characters, today }) => {
   return (
     <div className="w-5/6 border-2 border-red-400 ">
       <ul className="flex flex-wrap">
-        {/* {characters.map((character) => (
-          <div key={character.id}>
-            <li>{character.name}</li>
-            <img src={character.icon} alt={character.name} />
-          </div>
-        ))} */}
         {characters.map((character) => (
           <div key={character.id}>
-            {character.farmable_days.includes(today) ? <h2>Farm</h2> : ""}
+            {character.farmable_days.includes(today) ? (
+              <>
+                <li>{character.name}</li>
+                <img src={character.icon} alt={character.name} />
+              </>
+            ) : (
+              ""
+            )}
           </div>
         ))}
       </ul>
