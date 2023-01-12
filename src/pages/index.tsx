@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { supabase } from "../utils/supabase";
+import { format, compareAsc } from "date-fns";
 import CharactersCard from "../components/CharactersCard";
 import WeaponsCard from "../components/WeaponsCard";
 
@@ -11,17 +12,20 @@ interface FarmableProps {
     name: string;
     icon: string;
     splash: string;
-    days: [];
+    farmable_days: string[];
   }[];
   weapons: {
     id: number;
     name: string;
     image: string;
-    days: [];
+    farmable_days: string[];
   }[];
+  today: string;
 }
 
 const Home: NextPage<FarmableProps> = ({ characters, weapons }) => {
+  let today = format(new Date(), "EEEE");
+
   return (
     <>
       <Head>
@@ -31,7 +35,7 @@ const Home: NextPage<FarmableProps> = ({ characters, weapons }) => {
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center">
         <h1>Uwu</h1>
-        <CharactersCard characters={characters} />
+        <CharactersCard characters={characters} today={today} />
         <WeaponsCard weapons={weapons} />
       </main>
     </>

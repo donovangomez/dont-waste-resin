@@ -4,19 +4,25 @@ interface CharactersProps {
     name: string;
     icon: string;
     splash: string;
-    days: [];
+    farmable_days: string[];
   }[];
+  today: string;
 }
 
-const CharactersCard: React.FC<CharactersProps> = ({ characters }) => {
+const CharactersCard: React.FC<CharactersProps> = ({ characters, today }) => {
   console.log(characters);
   return (
     <div className="w-5/6 border-2 border-red-400 ">
       <ul className="flex flex-wrap">
-        {characters.map((character) => (
+        {/* {characters.map((character) => (
           <div key={character.id}>
             <li>{character.name}</li>
             <img src={character.icon} alt={character.name} />
+          </div>
+        ))} */}
+        {characters.map((character) => (
+          <div key={character.id}>
+            {character.farmable_days.includes(today) ? <h2>Farm</h2> : ""}
           </div>
         ))}
       </ul>
