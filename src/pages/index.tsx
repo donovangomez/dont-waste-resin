@@ -3,8 +3,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { supabase } from "../utils/supabase";
 import { format, compareAsc } from "date-fns";
-import CharactersCard from "../components/CharactersCard";
-import WeaponsCard from "../components/WeaponsCard";
+import CharactersContainer from "../components/CharactersContainer";
+import WeaponsContainer from "../components/WeaponsContainer";
 import TodayCard from "../components/TodayCard";
 
 interface FarmableProps {
@@ -36,8 +36,8 @@ const Home: NextPage<FarmableProps> = ({ characters, weapons }) => {
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center border-2 border-green-500">
         <TodayCard today={today} />
-        <CharactersCard characters={characters} today={today} />
-        <WeaponsCard weapons={weapons} today={today} />
+        <CharactersContainer characters={characters} today={today} />
+        <WeaponsContainer weapons={weapons} today={today} />
       </main>
     </>
   );

@@ -8,7 +8,7 @@ interface WeaponsProps {
   today: string;
 }
 
-const WeaponsCard: React.FC<WeaponsProps> = ({ weapons, today }) => {
+const WeaponsContainer: React.FC<WeaponsProps> = ({ weapons, today }) => {
   return (
     <div className="w-5/6 border-2 border-red-400 ">
       <ul className="flex flex-wrap">
@@ -29,4 +29,4 @@ const WeaponsCard: React.FC<WeaponsProps> = ({ weapons, today }) => {
   );
 };
 
-export default WeaponsCard;
+export default WeaponsContainer;

@@ -1,3 +1,5 @@
+import CharacterCard from "./CharacterCard";
+
 interface CharactersProps {
   characters: {
     id: number;
@@ -9,18 +11,18 @@ interface CharactersProps {
   today: string;
 }
 
-const CharactersCard: React.FC<CharactersProps> = ({ characters, today }) => {
+const CharactersContainer: React.FC<CharactersProps> = ({
+  characters,
+  today,
+}) => {
   console.log(characters);
   return (
     <div className="w-5/6 border-2 border-red-400 ">
-      <ul className="flex flex-wrap">
+      <ul className="flex flex-wrap gap-2">
         {characters.map((character) => (
           <div key={character.id}>
             {character.farmable_days.includes(today) ? (
-              <>
-                <li>{character.name}</li>
-                <img src={character.icon} alt={character.name} />
-              </>
+              <CharacterCard name={character.name} icon={character.icon} />
             ) : (
               ""
             )}
@@ -31,4 +33,4 @@ const CharactersCard: React.FC<CharactersProps> = ({ characters, today }) => {
   );
 };
 
-export default CharactersCard;
+export default CharactersContainer;
