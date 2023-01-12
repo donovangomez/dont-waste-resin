@@ -5,6 +5,7 @@ import { supabase } from "../utils/supabase";
 import { format, compareAsc } from "date-fns";
 import CharactersCard from "../components/CharactersCard";
 import WeaponsCard from "../components/WeaponsCard";
+import TodayCard from "../components/TodayCard";
 
 interface FarmableProps {
   characters: {
@@ -34,7 +35,9 @@ const Home: NextPage<FarmableProps> = ({ characters, weapons }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center">
-        <h1>Uwu</h1>
+        <div>
+          <TodayCard today={today} />
+        </div>
         <CharactersCard characters={characters} today={today} />
         <WeaponsCard weapons={weapons} today={today} />
       </main>
