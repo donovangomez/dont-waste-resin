@@ -47,7 +47,6 @@ const Form: React.FC<TodosProps> = ({ todos, setTodos }) => {
         placeholder="add a character"
       />
       <button>+</button>
-      {inputText}
     </form>
   );
 };

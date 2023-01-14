@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import Form from "../components/Todos/Form";
 import { useState } from "react";
+import TodoList from "../components/Todos/TodoList";
 
 interface TodosState {
   todos: {
@@ -30,6 +31,7 @@ const todos: NextPage<TodosState> = () => {
       </header>
       <section>
         <Form todos={todos} setTodos={setTodos} />
+        <TodoList todos={todos} />
       </section>
     </div>
   );
