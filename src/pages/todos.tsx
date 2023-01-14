@@ -8,6 +8,15 @@ interface TodosState {
     task: string;
     completed: boolean;
   }[];
+  setTodos: React.Dispatch<
+    React.SetStateAction<
+      {
+        id: number;
+        task: string;
+        completed: boolean;
+      }[]
+    >
+  >;
 }
 
 const todos: NextPage<TodosState> = () => {
@@ -20,7 +29,7 @@ const todos: NextPage<TodosState> = () => {
         <h3>What are you gonna do today?</h3>
       </header>
       <section>
-        <Form />
+        <Form todos={todos} setTodos={setTodos} />
       </section>
     </div>
   );
