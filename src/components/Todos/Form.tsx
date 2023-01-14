@@ -22,6 +22,10 @@ const Form: React.FC<TodosProps> = ({ todos, setTodos }) => {
 
   const inputTextHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value);
+  };
+
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
     setTodos([
       ...todos,
@@ -31,10 +35,11 @@ const Form: React.FC<TodosProps> = ({ todos, setTodos }) => {
         id: Math.floor(Math.random() * 20),
       },
     ]);
+    setInputText("");
   };
 
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <input
         type="text"
         onChange={inputTextHandler}
