@@ -1,7 +1,18 @@
 import { type NextPage } from "next";
 import Form from "../components/Todos/Form";
+import { useState } from "react";
 
-const todos: NextPage = () => {
+interface TodosState {
+  todos: {
+    id: number;
+    task: string;
+    completed: boolean;
+  }[];
+}
+
+const todos: NextPage<TodosState> = () => {
+  const [todos, setTodos] = useState<TodosState["todos"]>([]);
+
   return (
     <div>
       <header>
