@@ -32,10 +32,26 @@ interface FarmableProps {
     splash: string;
     farmable_days: string[];
   }[];
+  todos: {
+    id: number;
+    task: string;
+    completed: boolean;
+  }[];
+
+  setTodos: React.Dispatch<
+    React.SetStateAction<
+      {
+        id: number;
+        task: string;
+        completed: boolean;
+      }[]
+    >
+  >;
 }
 
 const Home: NextPage<FarmableProps> = ({ characters, weapons }) => {
   let today = format(new Date(), "EEEE");
+  const [todos, setTodos] = useState<FarmableProps["todos"]>([]);
   let [farmingCharacters, setFarmingCharacters] = useState<
     FarmableProps["farmingCharacters"]
   >([]);
@@ -52,10 +68,7 @@ const Home: NextPage<FarmableProps> = ({ characters, weapons }) => {
         <TodayCard today={today} />
         <CharactersContainer characters={characters} today={today} />
         <WeaponsContainer weapons={weapons} today={today} />
-        <TodoList
-          farmingCharacters={farmingCharacters}
-          setFarmingCharacters={setFarmingCharacters}
-        />
+        <TodoList todos={todos} />
       </main>
     </>
   );
