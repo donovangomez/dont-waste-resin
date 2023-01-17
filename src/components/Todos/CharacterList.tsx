@@ -1,11 +1,6 @@
 import React from "react";
 
-interface TodoListProps {
-  todos: {
-    id: number;
-    task: string;
-    completed: boolean;
-  }[];
+interface CharacterListProps {
   farmingCharacters: {
     id: number;
     name: string;
@@ -26,20 +21,8 @@ interface TodoListProps {
   >;
 }
 
-const TodoList: React.FC<TodoListProps> = ({
-  todos,
-  farmingCharacters,
-  setFarmingCharacters,
-}) => {
-  return (
-    <ul>
-      {todos.map((todo) => (
-        <>
-          <li>{todo.task}</li>
-        </>
-      ))}
-    </ul>
-  );
+const CharacterList: React.FC = () => {
+  return <div>CharactersList</div>;
 };
 
-export default TodoList;
+export default CharactersList;

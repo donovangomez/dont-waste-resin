@@ -9,6 +9,7 @@ interface TodosState {
     task: string;
     completed: boolean;
   }[];
+
   setTodos: React.Dispatch<
     React.SetStateAction<
       {
