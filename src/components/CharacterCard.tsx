@@ -10,6 +10,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ name, icon }) => {
     <li className="rounded-md border-2 border-pink-600">
       <div>{name}</div>
       <img src={icon} alt={name} />
+      <button>+</button>
     </li>
   );
 };

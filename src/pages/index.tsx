@@ -6,6 +6,7 @@ import { format, compareAsc } from "date-fns";
 import CharactersContainer from "../components/CharactersContainer";
 import WeaponsContainer from "../components/WeaponsContainer";
 import TodayCard from "../components/TodayCard";
+import Navbar from "../components/Navbar";
 
 interface FarmableProps {
   characters: {
@@ -35,6 +36,7 @@ const Home: NextPage<FarmableProps> = ({ characters, weapons }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center border-2 border-green-500">
+        <Navbar />
         <TodayCard today={today} />
         <CharactersContainer characters={characters} today={today} />
         <WeaponsContainer weapons={weapons} today={today} />
