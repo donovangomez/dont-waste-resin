@@ -21,8 +21,8 @@ interface CharacterListProps {
   >;
 }
 
-const CharacterList: React.FC = () => {
+const CharacterList: React.FC<CharacterListProps> = () => {
   return <div>CharactersList</div>;
 };
 
-export default CharactersList;
+export default CharacterList;
