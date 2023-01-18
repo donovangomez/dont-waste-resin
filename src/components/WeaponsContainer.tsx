@@ -11,6 +11,7 @@ interface WeaponsProps {
 const WeaponsContainer: React.FC<WeaponsProps> = ({ weapons, today }) => {
   return (
     <div className="w-5/6 border-2 border-red-400 ">
+      <h1 className="text-3xl">Weapons to farm today:</h1>
       <ul className="flex flex-wrap">
         {weapons.map((weapon) => (
           <div key={weapon.id}>

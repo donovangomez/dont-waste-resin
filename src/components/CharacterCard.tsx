@@ -36,10 +36,14 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
   };
 
   return (
-    <li className="rounded-md border-2 border-pink-600">
-      <div>{name}</div>
-      <img src={icon} alt={name} />
-      <button onClick={farmCharacterHandler}>+</button>
+    <li>
+      <img
+        className="rounded-full border-2 border-pink-600"
+        src={icon}
+        alt={name}
+        width={150}
+      />
+      {/* <button onClick={farmCharacterHandler}>+</button> */}
     </li>
   );
 };

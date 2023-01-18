@@ -38,7 +38,8 @@ const CharactersContainer: React.FC<CharactersProps> = ({
   console.log(characters);
   return (
     <div className="w-5/6 border-2 border-red-400 ">
-      <ul className="flex flex-wrap gap-2">
+      <h1 className="my-8 text-center text-3xl">Characters to farm today:</h1>
+      <ul className="flex flex-wrap items-center justify-center">
         {characters.map((character) => (
           <div key={character.id}>
             {character.farmable_days.includes(today) ? (
