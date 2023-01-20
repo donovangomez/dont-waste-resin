@@ -1,3 +1,5 @@
+import WeaponsCard from "./WeaponsCard";
+
 interface WeaponsProps {
   weapons: {
     id: number;
@@ -16,10 +18,7 @@ const WeaponsContainer: React.FC<WeaponsProps> = ({ weapons, today }) => {
         {weapons.map((weapon) => (
           <div key={weapon.id}>
             {weapon.farmable_days.includes(today) ? (
-              <>
-                <li>{weapon.name}</li>
-                <img src={weapon.image} alt={weapon.name} />
-              </>
+              <WeaponsCard name={weapon.name} icon={weapon.image} />
             ) : (
               ""
             )}
