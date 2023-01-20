@@ -66,7 +66,12 @@ const Home: NextPage<FarmableProps> = ({ characters, weapons }) => {
       <Navbar />
       <main className="flex min-h-screen flex-col items-center justify-center border-2 border-green-500">
         <TodayCard today={today} />
-        <CharactersContainer characters={characters} today={today} />
+        <CharactersContainer
+          characters={characters}
+          farmingCharacters={farmingCharacters}
+          setFarmingCharacters={setFarmingCharacters}
+          today={today}
+        />
         <WeaponsContainer weapons={weapons} today={today} />
         <TodoList todos={todos} />
       </main>
